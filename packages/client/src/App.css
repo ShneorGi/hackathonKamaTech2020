@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+
+
+.home_wrapper {
+  /* background-color: red; */
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(167.88deg, #191129 9.94%, #2c2a6c 94.12%);
+}
+
+.logo_icon{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  padding-top: 100px;
+}
+
+.welcome_logo_icon{
+  margin-left: 60%;
+  position: relative;
+  padding-top: 50px;
+}
+
+.logo_title{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  padding-top: 10px;
+}
+
+/* RAG-Sans1.0-Regular */
+
