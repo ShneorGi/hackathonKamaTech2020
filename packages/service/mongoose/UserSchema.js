@@ -15,10 +15,18 @@ const UserSchema = new Schema({
         type: Types.String,
         required: false,
     },
-    members: {
-        type: [String],
+    type: {
+        type: Types.String,
         required: false,
     },
+    members: {
+        type: [Types.String],
+        required: false,
+    },
+    questions: [{
+        questionId: Types.String,
+        answerId: Types.String,
+    }]
 }, { versionKey: false });
 
 const UserStoreModel = model('users', UserSchema, 'users');
