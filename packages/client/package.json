@@ -20,7 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "rm -rf ../server && mkdir ../server && cp -R ./build ../server"
+    "deploy": "rm -rf ../server/build && mkdir ../server/build && cp -R ./build ../server"
   },
   "eslintConfig": {
     "extends": [
