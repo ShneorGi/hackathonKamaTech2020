@@ -1,44 +1,26 @@
-const uuidv4 = require('uuid').v4;
-const { mongoose } = require("@hakaton/service");
+const _ = require('lodash');
+const { mongoose } = require('@hakaton/service');
+const questions = require('./questions.json');
 
-async function create(req, res, next) {
+const LIMIT = 5;
+
+async function getPreQuestions(req, res, next) {
     try {
-        const { id } = await mongoose.QuestionSchema.create({ id: uuidv4() });
-        return res.status(200).json({ id });
+        return res.status(200).json(questions);
     } catch (e) {
         return next(e);
     }
 }
 async function get(req, res, next) {
     try {
-        const { questionId } = req.params;
-        const doc = await mongoose.QuestionSchema.findOne({ id: questionId }).select('-_id');
-        return res.status(200).json(doc.toObject());
-    } catch (e) {
-        return next(e);
-    }
-}
-async function update(req, res, next) {
-    try {
-        const { questionId } = req.params;
-        const doc = await mongoose.QuestionSchema.findOne({ id: questionId }).select('-_id');
-        return res.status(200).json(doc.toObject());
-    } catch (e) {
-        return next(e);
-    }
-}
-async function destroy(req, res, next) {
-    try {
-        const { questionId } = req.params;
-        const doc = await mongoose.QuestionSchema.findOne({ id: questionId }).select('-_id');
-        return res.status(200).json(doc.toObject());
+        const docs = await mongoose.QuestionSchema.find().select('-_id');
+        const response = _.sampleSize(docs.map((doc) => doc.toObject()), LIMIT);
+        return res.status(200).json(response);
     } catch (e) {
         return next(e);
     }
 }
 module.exports = {
-    create,
     get,
-    update,
-    destroy,
+    getPreQuestions,
 };
