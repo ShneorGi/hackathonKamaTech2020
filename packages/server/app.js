@@ -3,7 +3,9 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const { mongoose } = require('./service/index');
+const swaggerUi = require('swagger-ui-express');
+const apiRouter = require('./routes/index');
+const docs = require('./docs')(__dirname);
 
 const app = express();
 
@@ -16,17 +18,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'build')));
-
-app.post('/users', (req, res, next) => {
-    debugger;
-    const d = mongoose.UserSchema;
-    return res.json({ message: 'hellpo' });
+app.use('*', (req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', '*');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header('Access-Control-Allow-Methods', '*');
+    next();
 });
-
-app.get('/users', (req, res, next) => {
-    debugger;
-    return res.json({ message: 'hellpo' });
-});
+app.use('/api', apiRouter);
+app.use('/', swaggerUi.serve, swaggerUi.setup(docs));
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

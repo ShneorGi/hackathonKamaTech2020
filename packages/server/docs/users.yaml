@@ -1,0 +1,90 @@
+/api/users:
+  post:
+    description: Create user
+    summary: Create a new user in the db
+    tags:
+      - Users
+    responses:
+      '200':
+        description: New user create succussfuly
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  tyep: string
+                  example: ec405928-6ba5-4d7b-a621-1280ceb48dd3
+/api/users/:userId:
+  get:
+    description: Get user
+    summary: Get all data of user
+    tags:
+      - Users
+    parameters:
+      - in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+        description: User Id
+        example: ec405928-6ba5-4d7b-a621-1280ceb48dd3
+    responses:
+      '200':
+        description: Get user succussfuly
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  tyep: string
+                  example: ec405928-6ba5-4d7b-a621-1280ceb48dd3
+  put:
+    description: Edit a user
+    summary: Edit a user
+    tags:
+      - Users
+    parameters:
+      - in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+        description: User Id
+        example: ec405928-6ba5-4d7b-a621-1280ceb48dd3
+    responses:
+      '200':
+        description: Get user succussfuly
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  tyep: string
+                  example: ec405928-6ba5-4d7b-a621-1280ceb48dd3
+  delete:
+    description: Edit a user
+    summary: Edit a user
+    tags:
+      - Users
+    parameters:
+      - in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+        description: User Id
+        example: ec405928-6ba5-4d7b-a621-1280ceb48dd3
+    responses:
+      '200':
+        description: Get user succussfuly
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  tyep: string
+                  example: ec405928-6ba5-4d7b-a621-1280ceb48dd3

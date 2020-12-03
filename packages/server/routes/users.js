@@ -1,10 +1,10 @@
 const express = require('express');
+const { users } = require('../api/index');
 
 const router = express.Router();
 
-/* GET users listing. */
-router.get('/', (req, res, next) => {
-    res.send('respond with a resource');
-});
-
+router.post('/', users.create);
+router.get('/:userId', users.get);
+router.put('/:userId', users.update);
+router.delete('/:userId', users.destroy);
 module.exports = router;
