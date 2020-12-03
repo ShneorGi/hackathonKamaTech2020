@@ -21,8 +21,12 @@ async function get(req, res, next) {
 async function update(req, res, next) {
     try {
         const { userId } = req.params;
-        const doc = await mongoose.UserSchema.findOne({ id: userId }).select('-_id');
-        return res.status(200).json(doc.toObject());
+        const { name } = req.body;
+        const { nModified } = await mongoose.UserSchema.update({ id: userId }, { name });
+        if (nModified) {
+            return res.status(200).json({});
+        }
+        return next(new Error(`Failed update user : ${userId}`));
     } catch (e) {
         return next(e);
     }
@@ -30,8 +34,28 @@ async function update(req, res, next) {
 async function destroy(req, res, next) {
     try {
         const { userId } = req.params;
-        const doc = await mongoose.QuestionSchema.findOne({ id: userId }).select('-_id');
+        const doc = await mongoose.QuestionSchema.deleteOne({ id: userId }).select('-_id');
         return res.status(200).json(doc.toObject());
+    } catch (e) {
+        return next(e);
+    }
+}
+async function share(req, res, next) {
+    try {
+        const { userId, followId } = req.params;
+
+        const doc = await mongoose.UserSchema.findOne({ id: userId }).select('-_id');
+        if (doc.members) {
+            doc.members.push(followId);
+        } else {
+            doc.members = [followId];
+        }
+        const { nModified } = await mongoose.UserSchema.update({ id: userId }, { members: doc.toObject() });
+        if (nModified) {
+            return res.status(200).json(doc.toObject());
+        }
+
+        return next(new Error(`Failed update user : ${userId}`));
     } catch (e) {
         return next(e);
     }
@@ -41,4 +65,5 @@ module.exports = {
     get,
     update,
     destroy,
+    share,
 };

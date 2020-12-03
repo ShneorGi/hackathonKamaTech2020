@@ -11,7 +11,14 @@ const UserSchema = new Schema({
         type: Types.String,
         required: true,
     },
-
+    name: {
+        type: Types.String,
+        required: false,
+    },
+    members: {
+        type: [String],
+        required: false,
+    },
 }, { versionKey: false });
 
 const UserStoreModel = model('users', UserSchema, 'users');
