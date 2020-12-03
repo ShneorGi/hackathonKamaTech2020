@@ -21,6 +21,5 @@
   "homepage": "https://github.com/ShneorGi/hackathonKamaTech2020#readme",
   "dependencies": {
     "lerna": "^3.22.1",
-    "react-horizontal-scrolling-menu": "^0.7.8"
   }
 }
