@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy-server": "lerna bootstrap && cd ./packages/server && npm run deploy"
+    "deploy-server": "lerna bootstrap && cd ./packages/server && npm run deploy",
+    "client-dev": "cd ./packages/client && npm start"
   },
   "repository": {
     "type": "git",
