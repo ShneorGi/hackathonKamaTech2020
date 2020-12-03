@@ -1,49 +1,94 @@
-import { ReactSVG } from 'react-svg'
-import SvgLogo from '../icons/logo.svg'
-import aboutLogo from '../icons/aboutLogo.svg'
-import '../App.css';
+import { ReactSVG } from "react-svg"
+import SvgLogo from "../icons/logo.svg"
+import aboutLogo from "../icons/aboutLogo.svg"
+import "../App.css"
 import { useHistory } from "react-router-dom"
-
+import { useSelector } from "react-redux"
 
 function Onboarding2() {
   const history = useHistory()
+  const user = useSelector((state) => state.user)
+
+  console.log("user", user)
 
   return (
     <div className="home_wrapper">
-
-      <div style={{ width: '80%', marginLeft: 'auto', marginRight: 'auto', display: 'flex', alignItems: 'flex-end', justifyContent: 'flex-end' }}>
+      <div
+        style={{
+          width: "80%",
+          marginLeft: "auto",
+          marginRight: "auto",
+          display: "flex",
+          alignItems: "flex-end",
+          justifyContent: "flex-end",
+        }}
+      >
         <ReactSVG
           beforeInjection={(svg) => {
-            svg.classList.add("welcome_logo_icon");
+            svg.classList.add("welcome_logo_icon")
           }}
           src={SvgLogo}
         />
       </div>
 
-      <div style={{ width: '80%', marginLeft: 'auto', marginRight: 'auto', display: 'flex', flexDirection: 'column' }}>
-
-        <div style={{ marginTop: '30px', color: 'white', fontSize: '40px', textAlign: 'end',lineHeight:'101%' }}>מחזירים אהבה</div>
-        <div style={{ color: 'white', fontSize: '40px', textAlign: 'end',lineHeight:'101%' }}>לדור הקודם</div>
-        <div style={{ color: 'white',lineHeight:'28px', fontSize: '22px', marginTop: '25px', textAlign: 'end' }}>
-          על מנת לפתוח משפחה ב
-          עלינו לזכור ללמוד מה ההעדפות של המבוגר שלכם ומה יגרום לו להרגיש יותר מחובר
+      <div
+        style={{
+          width: "80%",
+          marginLeft: "auto",
+          marginRight: "auto",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <div
+          style={{
+            marginTop: "30px",
+            color: "white",
+            fontSize: "40px",
+            textAlign: "end",
+            lineHeight: "101%",
+          }}
+        >
+          מחזירים אהבה
+        </div>
+        <div
+          style={{
+            color: "white",
+            fontSize: "40px",
+            textAlign: "end",
+            lineHeight: "101%",
+          }}
+        >
+          לדור הקודם
+        </div>
+        <div
+          style={{
+            color: "white",
+            lineHeight: "28px",
+            fontSize: "22px",
+            marginTop: "25px",
+            textAlign: "end",
+          }}
+        >
+          על מנת לפתוח משפחה ב עלינו לזכור ללמוד מה ההעדפות של המבוגר שלכם ומה
+          יגרום לו להרגיש יותר מחובר
         </div>
         <ReactSVG
           beforeInjection={(svg) => {
-            svg.classList.add('logo_body')
+            svg.classList.add("logo_body")
           }}
           src={aboutLogo}
         />
       </div>
 
       <div
-      onClick={()=>{
-        history.push("/Onboarding3")
-      }}
+        onClick={() => {
+          history.push("/Onboarding3")
+        }}
         style={{
           width: "80%",
-          left:'10%',
-          right:'10%',
+          left: "10%",
+          right: "10%",
           height: "70px",
           background: "white",
           borderRadius: "10px",
@@ -53,14 +98,12 @@ function Onboarding2() {
           alignItems: "center",
           display: "flex",
           cursor: "pointer",
-          position: 'absolute',
-          bottom:'30px'
+          position: "absolute",
+          bottom: "30px",
         }}
       >
         <div
-        onClick={()=>{
-          
-        }}
+          onClick={() => {}}
           style={{
             color: "#0B204C",
             fontSize: "25px",
@@ -72,12 +115,11 @@ function Onboarding2() {
             marginRight: "auto",
           }}
         >
-          קח אותי לשאלון ההיכרות          </div>
+          קח אותי לשאלון ההיכרות{" "}
+        </div>
       </div>
-   
     </div>
-
-  );
+  )
 }
 
-export default Onboarding2;
+export default Onboarding2
