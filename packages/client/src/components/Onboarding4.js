@@ -10,7 +10,13 @@ import { useLocation } from "react-router-dom";
 function Onboarding4(props) {
     const history = useHistory()
     const location = useLocation();
-    const [checkedArray, setCheckedArray] = useState([false, false, false])
+    const [checkedArray, setCheckedArray] = useState([false, false, false, false])
+
+    let value;
+    if (location.state.type == 'סבתא')
+        value = 'מעדיפה'
+    else
+        value = 'מעדיף'
 
     useEffect(() => {
     }, [checkedArray])
@@ -30,7 +36,7 @@ function Onboarding4(props) {
             >
                 <div style={{ width: '80%', marginLeft: 'auto', marginRight: 'auto', display: 'flex', flexDirection: 'column' }}>
 
-                    <text style={{ marginTop: '20px', color: 'black', fontSize: '40px', textAlign: 'end', fontWeight: '500', marginTop: '50px', fontWeight: '600' ,lineHeight:'101%'}}>     איזו פעילות {location.state.type} {props.type == 'סבתא' ? ' מעדיף' : 'מעדיפה'}</text>
+                    <text style={{ marginTop: '20px', color: 'black', fontSize: '40px', textAlign: 'end', fontWeight: '500', marginTop: '50px', fontWeight: '600', lineHeight: '101%' }}>     איזו פעילות {location.state.type} {value}</text>
                     {/* <text style={{ marginTop: '20px', color: 'black', fontSize: '40px', textAlign: 'end', fontWeight: '500', marginTop: '50px', fontWeight: '600'}}>     ?{location.state.type} {props.type == 'סבתא' ? 'מעדיפה' : 'מעדיף'}</text> */}
                     <div style={{ color: 'white', fontSize: '40px', textAlign: 'end' }}>לדור הקודם</div>
                     <div style={{ color: 'white', fontSize: '18px', marginTop: '25px', textAlign: 'end' }}>
@@ -67,12 +73,12 @@ function Onboarding4(props) {
 
                             <label style={{ marginTop: '25px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end' }}>
                                 <text style={{ color: '#162858', marginTop: 'auto', marginBottom: 'auto', display: 'flex', alignContent: 'center', fontSize: 22, alignItems: 'center', height: '30px' }}> בילוי ביתי</text>
-                                <input type="radio" value="option1" checked={checkedArray[1]}
+                                <input type="radio" value="option1" checked={checkedArray[2]}
                                     onClick={() => {
                                         let array = [...checkedArray];
-                                        array[3] = array[1] ? false : true;
+                                        array[2] = array[2] ? false : true;
                                         array[0] = false
-                                        array[2] = false
+                                        array[3] = false
                                         array[1] = false
                                         setCheckedArray(array)
                                     }}
@@ -82,12 +88,13 @@ function Onboarding4(props) {
 
                             <label style={{ marginTop: '25px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end' }}>
                                 <text style={{ color: '#162858', marginTop: 'auto', marginBottom: 'auto', display: 'flex', alignContent: 'center', fontSize: 22, alignItems: 'center', height: '30px' }}> לצאת לבית קפה</text>
-                                <input type="radio" value="option1" checked={checkedArray[2]}
+                                <input type="radio" value="option1" checked={checkedArray[3]}
                                     onClick={() => {
                                         let array = [...checkedArray];
-                                        array[2] = array[2] ? false : true;
+                                        array[3] = array[3] ? false : true;
                                         array[1] = false
                                         array[0] = false
+                                        array[2] = false
                                         setCheckedArray(array)
                                     }}
                                 />
@@ -98,7 +105,10 @@ function Onboarding4(props) {
 
                         <div
                             onClick={() => {
-                                history.push("/Onboarding3")
+                                if (checkedArray.includes(true)) {
+                                    history.push("/Onboarding5", { type: location.state.type })
+                                }
+                                else { }
                             }}
                             style={{
                                 width: "80%",
@@ -119,12 +129,7 @@ function Onboarding4(props) {
                             }}
                         >
                             <div
-                                onClick={() => {
-                                    if (checkedArray.includes(true)) {
-                                        history.push("/Onboarding4")
-                                    }
-                                    else { }
-                                }}
+
                                 style={{
                                     color: "white",
                                     fontSize: "25px",
