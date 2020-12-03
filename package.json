@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "deploy-server": "lerna bootstrap && cd ./packages/server && npm run deploy",
+    "deploy-client": "cd ./packages/client && npm run buile && npm run deploy",
     "client-dev": "cd ./packages/client && npm start"
   },
   "repository": {
