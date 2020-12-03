@@ -8,8 +8,10 @@ import { useSelector } from "react-redux"
 function Onboarding2() {
   const history = useHistory()
   const user = useSelector((state) => state.user)
+  const questions = useSelector((state) => state.questions)
 
   console.log("user", user)
+  console.log("questions", questions)
 
   return (
     <div className="home_wrapper">

@@ -1,5 +1,7 @@
-export const SAVE_USER = "SAVE_USER"
+import Axios from "axios"
+import host from "./Utils"
 
+export const SAVE_USER = "SAVE_USER"
 const initialState = {
   user: { name: "sammy" },
 }
@@ -22,5 +24,8 @@ export default (state = initialState, action) => {
 }
 
 export const loadUser = () => (dispatch) => {
-  dispatch({ type: SAVE_USER, payload: { name: "leah" } })
+  console.log("!!!!!!!11 load from server")
+  Axios.post(host + "/users").then((response) => {
+    dispatch({ type: SAVE_USER, payload: response.data })
+  })
 }
