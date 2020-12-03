@@ -76,7 +76,7 @@ function Onboarding3() {
                         </div>
 
 
-                        <div style={{ marginTop: '20px', color: 'black', fontSize: '42px', textAlign: 'end', fontWeight: '500', marginTop: '70px', fontWeight: '600' }}> העלו תמונה</div>
+                        {/* <div style={{ marginTop: '20px', color: 'black', fontSize: '42px', textAlign: 'end', fontWeight: '500', marginTop: '70px', fontWeight: '600' }}> העלו תמונה</div> */}
 
                         <div
                             onClick={() => {

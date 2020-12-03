@@ -60,7 +60,6 @@
   padding-top: 50px;
 }
 
-
 .welcome_logo_icon {
   padding-top: 50px;
   height: 55px;
@@ -75,7 +74,6 @@
   padding-top: 20px;
 }
 
-
 .logo_body {
   width: 330px;
   margin-top: 90px;
@@ -84,7 +82,7 @@
   align-content: center;
   display: flex;
 }
-.user_input_wrapper{
+.user_input_wrapper {
   border-radius: 40px 40px 0px 0px;
   background-color: white;
   width: 100%;
@@ -92,34 +90,85 @@
   position: absolute;
   bottom: 0;
 }
-.user_input_wrapper_home{
+.user_input_wrapper_home {
   border-radius: 40px 40px 0px 0px;
   background-color: white;
   width: 100%;
-  height: 66%;
+  height: 70%;
   position: absolute;
   bottom: 0;
 }
 
-
-body{
+.user_input_wrapper_home2 {
+  border-radius: 40px 40px 0px 0px;
+  background-color: white;
+  width: 100%;
+  height: 73%;
+  position: absolute;
+  bottom: 0;
+}
+body {
   font-family: Rag-Regular;
 }
 
-input[type=radio] {
+input[type="radio"] {
   border: 0px;
-  width:40px;
+  width: 40px;
   height: 2em;
 }
 
-.home_logo{
-  width: 164px;
-  height: 164px;
-  margin-top: 30px;
+.home_logo {
+  width: 145px;
+  height: 145px;
+  margin-top: 20px;
 }
 
-
+.new_hug_logo {
+  /* position: absolute; */
+  bottom: 0px;
+  width: 70px;
+  height: 70px;
+  align-content: center;
+  margin-top: 54%;
+  /* align-self: center;  */
+}
 
 .item_wrapper:focus {
   outline: none;
+}
+
+.new_hug_icons {
+  width: 35px;
+  height: 35px;
+  /* align-items: center; */
+  display: flex;
+  /* align-content: center; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.new_hug_icon_plus {
+  width: 20px;
+  height: 20px;
+  /* align-items: center; */
+  display: flex;
+  /* align-content: center; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.newHugFromUser {
+  border: 1px solid #2c2a6c;
+  box-sizing: border-box;
+  border-radius: 14px;
+  height: 50px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+
 }
