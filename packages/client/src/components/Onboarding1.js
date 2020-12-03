@@ -4,13 +4,19 @@ import SvgLogo from "../icons/logo.svg"
 import Hugs from "../icons/Hugs.svg"
 import React from "react"
 import { useHistory } from "react-router-dom"
+import { useSelector, useDispatch } from "react-redux"
+import { loadUser } from "../reducers/UserReducer"
 
 function Onboarding1() {
   const history = useHistory()
 
+  const user = useSelector((state) => state.user)
+  const dispatch = useDispatch()
+
+  console.log("user", user)
+
   return (
     <div className="home_wrapper">
-     
       <ReactSVG
         beforeInjection={(svg) => {
           svg.classList.add("logo_icon")
@@ -38,8 +44,8 @@ function Onboarding1() {
       <div
         style={{
           width: "80%",
-          left:'10%',
-          right:'10%',
+          left: "10%",
+          right: "10%",
           height: "70px",
           background: "white",
           borderRadius: "10px",
@@ -49,12 +55,13 @@ function Onboarding1() {
           alignItems: "center",
           display: "flex",
           cursor: "pointer",
-          position:'absolute',
-          bottom:'30px'
+          position: "absolute",
+          bottom: "30px",
         }}
       >
         <div
           onClick={() => {
+            dispatch(loadUser())
             history.push("/Onboarding2")
           }}
           style={{
@@ -71,7 +78,6 @@ function Onboarding1() {
            הבא{" "}
         </div>
       </div>
-    
     </div>
   )
 }
