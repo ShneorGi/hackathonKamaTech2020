@@ -21,10 +21,17 @@ async function get(req, res, next) {
 async function update(req, res, next) {
     try {
         const { userId } = req.params;
-        const { name } = req.body;
-        const { nModified } = await mongoose.UserSchema.updateOne({ id: userId }, { name });
+        const { name, type } = req.body;
+        const attributes = {};
+        if (name) {
+            attributes.name = name;
+        }
+        if (type) {
+            attributes.type = type;
+        }
+        const { nModified } = await mongoose.UserSchema.updateOne({ id: userId }, attributes);
         if (nModified) {
-            return res.status(200).json({});
+            return res.status(204);
         }
         return next(new Error(`Failed update user : ${userId}`));
     } catch (e) {
@@ -50,7 +57,8 @@ async function share(req, res, next) {
         } else {
             doc.members = [followId];
         }
-        const { nModified } = await mongoose.UserSchema.updateOne({ id: userId }, { members: doc.toObject() });
+        const members = doc.toObject();
+        const { nModified } = await mongoose.UserSchema.updateOne({ id: userId }, { members });
         if (nModified) {
             return res.status(200).json(doc.toObject());
         }
