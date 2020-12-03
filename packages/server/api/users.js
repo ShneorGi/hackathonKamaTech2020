@@ -60,7 +60,7 @@ async function share(req, res, next) {
         } else {
             doc.members = [followId];
         }
-        const members = doc.toObject();
+        const { members } = doc.toObject();
         const { nModified } = await mongoose.UserSchema.updateOne({ id: userId }, { members });
         if (nModified) {
             return res.status(200).json(doc.toObject());
