@@ -106,3 +106,5 @@ dist
 node_modules/
 .env
 package-lock.json
+/packages/server/build/
+/packages/client/build/

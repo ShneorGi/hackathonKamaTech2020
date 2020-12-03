@@ -1,5 +1,5 @@
-const mongo = require('./mongoose');
+const mongoose = require('./mongoose/index');
 
 module.exports = {
-    mongo,
+    mongoose,
 };
