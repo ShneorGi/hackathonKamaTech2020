@@ -1,7 +1,7 @@
 import "../App.css"
 import { ReactSVG } from "react-svg"
 import SvgLogo from "../icons/logo.svg"
-import Clozer from "../icons/Clozer.svg"
+import Hugs from "../icons/Hugs.svg"
 import React from "react"
 import { useHistory } from "react-router-dom"
 
@@ -10,7 +10,7 @@ function Onboarding1() {
 
   return (
     <div className="home_wrapper">
-      {" "}
+     
       <ReactSVG
         beforeInjection={(svg) => {
           svg.classList.add("logo_icon")
@@ -21,7 +21,7 @@ function Onboarding1() {
         beforeInjection={(svg) => {
           svg.classList.add("logo_title")
         }}
-        src={Clozer}
+        src={Hugs}
       />
       <div
         style={{
@@ -33,20 +33,24 @@ function Onboarding1() {
         }}
       >
         {" "}
-        clozer -ברוכים הבאים ל
+        Hugs -ברוכים הבאים ל
       </div>
       <div
         style={{
           width: "80%",
+          left:'10%',
+          right:'10%',
           height: "70px",
           background: "white",
           borderRadius: "10px",
           marginLeft: "auto",
           marginRight: "auto",
-          marginTop: "15px",
+          // marginTop: "15px",
           alignItems: "center",
           display: "flex",
           cursor: "pointer",
+          position:'absolute',
+          bottom:'30px'
         }}
       >
         <div
@@ -67,6 +71,7 @@ function Onboarding1() {
            הבא{" "}
         </div>
       </div>
+    
     </div>
   )
 }

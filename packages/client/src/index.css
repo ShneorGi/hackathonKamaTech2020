@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'Rag-Regular';
+  src: local('Rag-Regular'), url(./fonts/RAG-Sans1.0-Regular.ttf) format('truetype');
+}
