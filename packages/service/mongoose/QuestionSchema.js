@@ -13,12 +13,12 @@ const QuestionSchema = new Schema({
     },
     text: {
         type: Types.String,
-        required: true
+        required: true,
     },
     answers: {
         type: [{
             id: Types.String,
-            text: Types.string,
+            text: Types.String,
         }]
     }
 

@@ -22,7 +22,7 @@ async function update(req, res, next) {
     try {
         const { userId } = req.params;
         const { name } = req.body;
-        const { nModified } = await mongoose.UserSchema.update({ id: userId }, { name });
+        const { nModified } = await mongoose.UserSchema.updateOne({ id: userId }, { name });
         if (nModified) {
             return res.status(200).json({});
         }
@@ -50,7 +50,7 @@ async function share(req, res, next) {
         } else {
             doc.members = [followId];
         }
-        const { nModified } = await mongoose.UserSchema.update({ id: userId }, { members: doc.toObject() });
+        const { nModified } = await mongoose.UserSchema.updateOne({ id: userId }, { members: doc.toObject() });
         if (nModified) {
             return res.status(200).json(doc.toObject());
         }
