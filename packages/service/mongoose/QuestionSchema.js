@@ -11,6 +11,16 @@ const QuestionSchema = new Schema({
         type: Types.String,
         required: true,
     },
+    text: {
+        type: Types.String,
+        required: true
+    },
+    answers: {
+        type: [{
+            id: Types.String,
+            text: Types.string,
+        }]
+    }
 
 }, { versionKey: false });
 

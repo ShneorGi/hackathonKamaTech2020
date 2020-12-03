@@ -1,7 +1,9 @@
 {
   "packages": [
+    "packages/service",
     "packages/server",
-    "packages/client"
+    "packages/client",
+    "packages/algo"
   ],
   "version": "0.0.0"
 }

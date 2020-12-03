@@ -1,5 +1,5 @@
 const uuidv4 = require('uuid').v4;
-const { mongoose } = require('../service/index');
+const { mongoose } = require('../../service/index');
 
 async function create(req, res, next) {
     try {
