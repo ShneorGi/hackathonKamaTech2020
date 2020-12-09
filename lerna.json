@@ -3,7 +3,8 @@
     "packages/service",
     "packages/server",
     "packages/client",
-    "packages/algo"
+    "packages/algo",
+    "packages/graphql"
   ],
   "version": "0.0.0"
 }

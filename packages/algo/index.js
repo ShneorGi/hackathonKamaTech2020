@@ -27,7 +27,7 @@ async function insertHugs() {
 
 async function insert() {
     await insertHugs();
-    await insertQuestions();
+    //await insertQuestions();
 }
 
 insert().then(() => {

@@ -79,68 +79,118 @@ export const dataSet: DataSet = {
     hugs: [{
         id: "",
         category: [Categories.CloseBy, Categories.Home],
-        text: "ביקור עם הילדים"
+        text: "ביקור עם הילדים אצל סבתא"
     }, {
         id: "",
         category: [Categories.CloseBy, Categories.Outdoors],
-        text: "לצאת לבית קפה"
+        text: "לצאת לבית קפה עם סבתא"
     }, {
         id: "",
         category: [Categories.CloseBy, Categories.Outdoors, Categories.CloseBy],
-        text: "לעשות קניות"
+        text: "לעשות קניות עם לסבתא"
     }, {
         id: "",
         category: [Categories.FarAway],
-        text: "לשלוח תמונה של הנכדים"
+        text: "לשלוח תמונה של הנכדים לסבתא"
     },{
         id: "",
         category: [Categories.FarAway],
-        text: "זום עם הנכדים"
+        text: "זום עם הנכדים וסבתא"
     },{
         id: "",
         category: [Categories.FarAway],
-        text: "שיחת טלפון"
+        text: "שיחת טלפון לסבתא"
     },{
         id: "",
         category: [Categories.Outdoors, Categories.CloseBy],
-        text: "יציאה לפארק"
+        text: "יציאה לפארק עם סבתא"
     },{
         id: "",
         category: [Categories.CloseBy, Categories.Present],
-        text: "לשלוח ארוחת צהריים חמה"
+        text: "לשלוח ארוחת צהריים חמה לסבתא"
     },{
         id: "",
         category: [Categories.CloseBy, Categories.Present],
-        text: "לשלוח ארוחת בוקר"
+        text: "לשלוח ארוחת בוקר לסבתא"
     },{
         id: "",
         category: [],
-        text: "יציאה משותפת לרופא"
+        text: "יציאה משותפת עם סבתא לרופא"
     },{
         id: "",
         category: [Categories.CloseBy, Categories.Home],
-        text: "מתנה קטנה לפני שבת"
+        text: "מתנה קטנה לסבתא לפני שבת"
     },{
         id: "",
         category: [Categories.Outdoors],
-        text: "ללכת לגן חיות"
+        text: "ללכת לגן חיותעם סבתא"
     },{
         id: "",
         category: [Categories.FarAway],
-        text: "להתקשר ולספר כמה אתם אוהבים אותם"
+        text: "להתקשר לסבתא ולספר כמה אתם אוהבים אותם"
     },{
         id: "",
         category: [Categories.FarAway],
-        text: "לשלוח מכתב"
-    },{
-        id: "",
-        category: [Categories.CloseBy, Categories.Home],
-        text: ""
-    },{
-        id: "",
-        category: [Categories.CloseBy, Categories.Home],
-        text: ""
-    }
+        text: "לשלוח מכתב לסבתא"
+    },
+
+        {
+            id: "",
+            category: [Categories.CloseBy, Categories.Home],
+            text: "ביקור עם הילדים אצל סבא"
+        }, {
+            id: "",
+            category: [Categories.CloseBy, Categories.Outdoors],
+            text: "לצאת לבית קפה עם סבא"
+        }, {
+            id: "",
+            category: [Categories.CloseBy, Categories.Outdoors, Categories.CloseBy],
+            text: "לעשות קניות עם לסבא"
+        }, {
+            id: "",
+            category: [Categories.FarAway],
+            text: "לשלוח תמונה של הנכדים לסבא"
+        },{
+            id: "",
+            category: [Categories.FarAway],
+            text: "זום עם הנכדים וסבא"
+        },{
+            id: "",
+            category: [Categories.FarAway],
+            text: "שיחת טלפון לסבא"
+        },{
+            id: "",
+            category: [Categories.Outdoors, Categories.CloseBy],
+            text: "יציאה לפארק עם סבא"
+        },{
+            id: "",
+            category: [Categories.CloseBy, Categories.Present],
+            text: "לשלוח ארוחת צהריים חמה לסבא"
+        },{
+            id: "",
+            category: [Categories.CloseBy, Categories.Present],
+            text: "לשלוח ארוחת בוקר לסבא"
+        },{
+            id: "",
+            category: [],
+            text: "יציאה משותפת עם סבא לרופא"
+        },{
+            id: "",
+            category: [Categories.CloseBy, Categories.Home],
+            text: "מתנה קטנה לסבא לפני שבת"
+        },{
+            id: "",
+            category: [Categories.Outdoors],
+            text: "ללכת לגן חיות עם סבא"
+        },{
+            id: "",
+            category: [Categories.FarAway],
+            text: "להתקשר לסבא ולספר כמה אתם אוהבים אותם"
+        },{
+            id: "",
+            category: [Categories.FarAway],
+            text: "לשלוח מכתב לסבא"
+        }
     ],
     connections: []
 }

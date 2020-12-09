@@ -1,0 +1,23 @@
+{
+  "name": "@hugs/graphql",
+  "version": "0.0.1",
+  "description": "shared  graph schemas",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "run-server": "ts-node ./lib/server.ts"
+  },
+  "dependencies": {
+    "express-graphql": "^0.12.0",
+    "express": "^4.17.1",
+    "graphql-tools": "^7.0.2",
+    "graphql": "^15.4.0",
+    "ws": "^7.4.1"
+  },
+  "devDependencies": {
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.2"
+  },
+  "author": "",
+  "license": "ISC"
+}

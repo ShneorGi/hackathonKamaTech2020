@@ -1,0 +1,27 @@
+
+type Answer {
+    id: ID!
+    text: String!
+    language: String!
+}
+
+type Question {
+    id: ID!
+    text: String!
+    answers: [Answer]!
+    language: String!
+}
+
+input LastQuestion {
+    id: ID!
+    answerId: ID!
+}
+
+input QuestionInput {
+    lastQuestion: LastQuestion
+    questionNumber: Int!
+}
+
+type QuestionQuery {
+    question(input: QuestionInput): Question!
+}
