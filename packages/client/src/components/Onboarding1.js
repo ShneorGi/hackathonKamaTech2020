@@ -6,6 +6,7 @@ import React from "react"
 import { useHistory } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { loadUser } from "../reducers/UserReducer"
+import { loadQuestions } from "../reducers/QuestionsReducer"
 
 function Onboarding1() {
   const history = useHistory()
@@ -62,6 +63,7 @@ function Onboarding1() {
         <div
           onClick={() => {
             dispatch(loadUser())
+            dispatch(loadQuestions())
             history.push("/Onboarding2")
           }}
           style={{

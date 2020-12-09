@@ -1,5 +1,5 @@
 import { ReactSVG } from 'react-svg'
-import SvgLogo from '../icons/logo.svg'
+import SvgNewHug from '../icons/newHug.svg'
 import SvgHome from '../icons/home.svg'
 import SvgClock from '../icons/clock.svg'
 
@@ -71,7 +71,10 @@ function Onboarding5(props) {
 
                     </div>
                 })}
+
+
             </div>
+
         </div>;
     };
 
@@ -119,7 +122,7 @@ function Onboarding5(props) {
             <div
                 className={"user_input_wrapper_home"}
             >
-                <div style={{ width: '100%', marginLeft: 'auto', marginRight: 'auto', display: 'flex', flexDirection: 'column', background: '', height: '233px', marginTop: '70px' }}>
+                <div style={{ width: '100%', marginLeft: 'auto', marginRight: 'auto', display: 'flex', flexDirection: 'column', background: '', height: '233px', marginTop: '30px' }}>
 
 
                     <ScrollMenu
@@ -130,8 +133,8 @@ function Onboarding5(props) {
 
                     <div style={{ height: '2px', background: '#0B204C', opacity: 0.1, width: '100%' }}> </div>
 
-                    <div style={{ display: 'flex', flexDirection: 'row', marginTop: '3px', marginTop:'20px', width: '90%', marginLeft: 'auto', marginRight: 'auto' }}>
-                        <div style={{ backgroundColor: '', width: '95%',height:'70px', }}>
+                    <div style={{ background: '', display: 'flex', flexDirection: 'row', marginTop: '3px', marginTop: '20px', width: '90%', marginLeft: 'auto', marginRight: 'auto' }}>
+                        <div style={{ backgroundColor: '', width: '95%', height: '70px', }}>
 
                             <text style={{ color: '#F76940', fontSize: '22px', fontWeight: '500', margnLeft: 'auto', display: 'flex', justifyContent: 'flex-end', marginRight: '15px', height: '50%', alignItems: 'center' }}>ביקור עם הילדים</text>
                             <div style={{ alignItems: 'center', background: '', marginRight: '15px', flexDirection: 'row', height: '50%', display: 'flex' }}>
@@ -145,7 +148,7 @@ function Onboarding5(props) {
                                     <div style={{ fontSize: '20px', color: '#B2BAC9', textAlign: 'end', justifyContent: 'center', display: 'flex', }}>17:00 - 18:00</div>
                                 </div>
 
-                                <div style={{ width: '15%',textAlign:'right' }}>
+                                <div style={{ width: '15%', textAlign: 'right' }}>
                                     <ReactSVG
                                         beforeInjection={(svg) => {
                                             // svg.classList.add("home_logo");
@@ -160,10 +163,12 @@ function Onboarding5(props) {
 
                         </div>
                     </div>
+                    <div style={{ marginBottom: '3px', height: '2px', background: '#0B204C', opacity: '0.1', width: '100%', marginTop: '10px' }}>33</div>
 
 
-                    <div style={{ display: 'flex', flexDirection: 'row', marginTop: '3px', marginTop:'20px', width: '90%', marginLeft: 'auto', marginRight: 'auto' }}>
-                        <div style={{ backgroundColor: '', width: '95%',height:'70px', }}>
+
+                    <div style={{ display: 'flex', flexDirection: 'row', marginTop: '3px', marginTop: '20px', width: '90%', marginLeft: 'auto', marginRight: 'auto' }}>
+                        <div style={{ backgroundColor: '', width: '95%', height: '70px', }}>
 
                             <text style={{ color: '#8462AA', fontSize: '22px', fontWeight: '500', margnLeft: 'auto', display: 'flex', justifyContent: 'flex-end', marginRight: '15px', height: '50%', alignItems: 'center' }}>משלוח פרחים</text>
                             <div style={{ alignItems: 'center', background: '', marginRight: '15px', flexDirection: 'row', height: '50%', display: 'flex' }}>
@@ -177,7 +182,7 @@ function Onboarding5(props) {
                                     <div style={{ fontSize: '20px', color: '#B2BAC9', textAlign: 'end', justifyContent: 'center', display: 'flex', }}>13:00 - 15:00</div>
                                 </div>
 
-                                <div style={{ width: '15%',textAlign:'right' }}>
+                                <div style={{ width: '15%', textAlign: 'right' }}>
                                     <ReactSVG
                                         beforeInjection={(svg) => {
                                             // svg.classList.add("home_logo");
@@ -192,14 +197,27 @@ function Onboarding5(props) {
 
                         </div>
                     </div>
+                    {/* <div style={{ marginBottom: '3px', height: '2px', background: '#0B204C', opacity: '0.1', width: '100%', marginTop: '10px' }}>33</div> */}
+
 
 
                 </div>
 
+                <div onClick={()=>
+                    history.push("/Onboarding6")
+                }>
+                    <ReactSVG
+                        beforeInjection={(svg) => {
+                            svg.classList.add("new_hug_logo");
+                        }}
+                        src={SvgNewHug}
+                    />
 
+                </div >
             </div>
 
-        </div >
+
+        </div>
 
     );
 }

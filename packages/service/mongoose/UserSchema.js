@@ -26,7 +26,8 @@ const UserSchema = new Schema({
     questions: [{
         questionId: Types.String,
         answerId: Types.String,
-    }]
+    }],
+    activities: [{}]
 }, { versionKey: false });
 
 const UserStoreModel = model('users', UserSchema, 'users');

@@ -79,6 +79,8 @@
               type:
                 tyep: string
                 example: grandfather
+              actions:
+                tyep: array
     responses:
       '200':
         description: Get user succussfuly

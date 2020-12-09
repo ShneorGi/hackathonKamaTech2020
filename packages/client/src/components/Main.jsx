@@ -5,6 +5,8 @@ import Onboarding2 from "./Onboarding2"
 import Onboarding3 from "./Onboarding3"
 import Onboarding4 from "./Onboarding4"
 import Onboarding5 from "./Onboarding5"
+import Onboarding6 from "./Onboarding6"
+import Onboarding7 from "./Onboarding7"
 
 export default function Main() {
   return (
@@ -18,6 +20,13 @@ export default function Main() {
         </Route>
         <Route path="/onboarding5">
           <Onboarding5 />
+        </Route>
+        <Route path="/onboarding6">
+          <Onboarding6 />
+        </Route>
+
+        <Route path="/onboarding7">
+          <Onboarding7 />
         </Route>
         <Route path="/onboarding2">
           <Onboarding2 />
